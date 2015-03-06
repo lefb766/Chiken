@@ -1,0 +1,8 @@
+{
+    "dependencies" : {
+    },
+    "frameworks" : {
+        "aspnet50" : {}
+    }
+}
+
