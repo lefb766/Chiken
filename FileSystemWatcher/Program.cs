@@ -20,7 +20,10 @@ public class Program
         fsw.Created += EventHandler;
         fsw.Deleted += EventHandler;
         fsw.Changed += EventHandler;
-        fsw.Renamed += EventHandler;
+        fsw.Renamed += (sender, args) =>
+        {
+            Console.WriteLine("\"{0}\", Renamed to \"{1}\"", args.OldName, args.Name);
+        };
 
         fsw.Error += (s, args) =>
         {
@@ -35,6 +38,7 @@ public class Program
 
     static void EventHandler(object sender, FileSystemEventArgs args)
     {
-        Console.WriteLine("received {0}, {1}", args.Name, args.ChangeType);
+        Console.WriteLine("\"{0}\" {1}", args.Name, args.ChangeType);
     }
 }
+
