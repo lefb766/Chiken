@@ -28,7 +28,8 @@ public class Program
             Environment.Exit(1);
         };
 
-        Console.Write("press enter to exit...");
+        fsw.EnableRaisingEvents = true;
+        Console.WriteLine("press enter to exit...");
         Console.ReadLine();
     }
 
